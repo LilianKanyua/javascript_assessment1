@@ -1,9 +1,9 @@
-// function reverse(myString){
+function reverse(myString){
     
-//     return food.reversed;
-// }
-// let food="eat";
-// console.log(reverse());
+    return food.reversed;
+}
+let food="eat";
+console.log(reverse(food));
   
 // question two
 
@@ -34,16 +34,27 @@ function merging(left,right){
 let num=[2,8,0,23,5,45,76];
 console.log(merge(num));
 // finding the target
-let num2=[0,2,5,8,23,45,76]
-let target=23;
+
 
 function locateTarget(num2,target){
     let leftSide=0;
     let rightSide=num2.length -1;
     let midArr=Math.floor((left+right/2));
- 
+  if(leftSide[0]>rightSide[0]){
+      return rightSide -1;
+  }
+  else if(leftSide>rightSide){
+      return leftSide +1;
+  }
+  else{
+    return null
+  }
+  
 }
-
+let num2=[0,2,5,8,23,45,76]
+let target=23;
+console.log(num2,target);
+// question five
 function multiply(arrNum){
    
     for(let i=0; i<arrNum.length; i++){
@@ -58,6 +69,10 @@ multiply(arrNum);
 // question six
 
 function turnToNumbers(nums){
-    
+for(let i=0; i<nums.length; i++){
+        
+        console.log(Number(nums[i]));
+}
 }
 let nums=["10","24","45","56","67"];
+console.log(turnToNumbers(nums));
