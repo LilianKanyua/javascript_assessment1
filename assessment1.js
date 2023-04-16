@@ -1,9 +1,10 @@
-function reverse(myString){
+function reverseString(food){
     
-    return food.reversed;
+   let reverse= food.split("").reverse().join("");
+   return reverse;
 }
 let food="eat";
-console.log(reverse(food));
+console.log(reverseString(food));
   
 // question two
 
@@ -39,21 +40,24 @@ console.log(merge(num));
 function locateTarget(num2,target){
     let leftSide=0;
     let rightSide=num2.length -1;
-    let midArr=Math.floor((left+right/2));
-  if(leftSide[0]>rightSide[0]){
-      return rightSide -1;
+    while(leftSide<=rightSide){
+        let midArr=Math.floor((leftSide+rightSide)/2);
+  if(num2[midArr]===target){
+      return midArr;
   }
-  else if(leftSide>rightSide){
-      return leftSide +1;
+  else if(num2[midArr]>target){
+      rightSide=midArr -1;
   }
   else{
-    return null
+    leftSide= midArr +1;
   }
   
 }
+return null;
+}
 let num2=[0,2,5,8,23,45,76]
 let target=23;
-console.log(num2,target);
+console.log(locateTarget(num2,target));
 // question five
 function multiply(arrNum){
    
@@ -76,3 +80,15 @@ for(let i=0; i<nums.length; i++){
 }
 let nums=["10","24","45","56","67"];
 console.log(turnToNumbers(nums));
+
+// function leapYears(years){
+//     for(i = 2000;i<=2023;i++){
+//   if(i%2==0){
+//       console.log(years[i] + " is a leap year.");
+//   } 
+//   else{
+//       console.log(years[i] + " is not a leap year.")
+//   }
+//     }
+// }
+// leapYears(years);
